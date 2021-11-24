@@ -11,6 +11,8 @@ struct hit_record {
    vec3 normal;
    shared_ptr<material> mat_ptr;
    double t;
+   double u;
+   double v;
    bool front_face;
 
    inline void set_face_normal(const ray& r, const vec3& outward_normal) {
@@ -18,7 +20,6 @@ struct hit_record {
        normal = front_face ? outward_normal :-outward_normal;
    }
 };
-
 
 class hittable {
    public:
